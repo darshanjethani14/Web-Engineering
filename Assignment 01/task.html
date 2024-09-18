@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Darshan Jethani</title>
+   
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8; 
+            color: #2c3e50;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #1abc9c; 
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            transition: color 0.3s ease;
+            box-shadow: 0 8px 16px rgba(26, 188, 156, 0.5);
+        }
+
+        header h1:hover {
+            color: #16a085; 
+            cursor: default;
+            box-shadow: 0 8px 16px rgba(22, 160, 133, 0.5);
+        }
+
+        nav {
+            background-color: #34495e; 
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav .nav-links a {
+            color: #ecf0f1; 
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            background-color: #2ecc71; /* Green hover */
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #ecf0f1;
+            transition: color 0.3s ease;
+        }
+
+        nav .menu-toggle:hover {
+            color: #2ecc71;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50; 
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            height: 3px;
+            background: #e74c3c; 
+            width: 50px;
+            margin: 0.5rem auto 0;
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 100px;
+        }
+
+        .bio,
+        .skills,
+        .projects,
+        .certifications {
+            background: #d6eaf8; /* Light blue-gray */
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-left: 6px solid #1abc9c; /* Green border */
+            margin-bottom: 2rem;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bio:hover,
+        .skills:hover,
+        .projects:hover,
+        .certifications:hover {
+            color: #fff;
+            background-color: #34495e;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .bio img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 6px solid #1abc9c; 
+            object-fit: cover;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bio img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .skills ul,
+        .projects ul,
+        .certifications ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills li,
+        .projects li,
+        .certifications li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #d6eaf8;
+            border-left: 6px solid #1abc9c;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills li:hover,
+        .projects li:hover,
+        .certifications li:hover {
+            color: #fff;
+            background-color: #34495e;
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        footer {
+            background-color: #1abc9c;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Darshan Jethani - Crafting Digital Experiences</h1>
+    </header>
+
+    <nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="bio">
+            <h2>About Me</h2>
+            <img src="c:\Users\DELL\Desktop\javascript\darshan.jpg.jpg" alt="Darshan Jethani">
+            <p>Hello! I'm Darshan Jethani, a passionate web developer with a love for creating beautiful and functional digital experiences.</p>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>Project 1: A web app to manage tasks efficiently.</li>
+                <li>Project 2: An e-commerce website with a seamless user experience.</li>
+                <li>Project 3: A portfolio website to showcase my projects and skills.</li>
+            </ul>
+        </section>
+
+        <section id="certifications" class="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Certified Web Developer </li>
+                <li>Python developer</li>
+                <li>JavaScript Bootcamp Completion from DEF School</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Darshan Jethani. All Rights Reserved.</p>
+        
+    </footer>
+
+</body>
+
+</html>
